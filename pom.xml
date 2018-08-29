@@ -93,6 +93,17 @@
 		    <artifactId>junit</artifactId>
 		    <version>4.12</version>
 		</dependency>
+		
+				<!-- https://mvnrepository.com/artifact/javax.transaction/javax.transaction-api -->
+		<dependency>
+		    <groupId>javax.transaction</groupId>
+		    <artifactId>javax.transaction-api</artifactId>
+		    <version>1.2</version>
+		</dependency>
+
+		
+		
+		
 
     </dependencies>
 
