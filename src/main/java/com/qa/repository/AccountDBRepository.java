@@ -18,10 +18,9 @@ import com.qa.model.Account;
 
 @Transactional (SUPPORTS)
 @Default
-public class AccountDBRepository implements AccountRepository {
+public class AccountDBRepository implements AccountInterface {
 	
     @PersistenceContext(unitName = "primary")
-
 	public EntityManager manager;
 	
 	@Inject
@@ -46,9 +45,8 @@ public class AccountDBRepository implements AccountRepository {
 
 	@Override
 	@Transactional(REQUIRED)
-	public String createAccount(String accout) {
-		Account anAccount = util.getObjectForJSON(accout, Account.class);
-		manager.persist(anAccount);
+	public String createAccount(Account account) {
+		manager.persist(account);
 		return "{\"message\": \"account has been sucessfully added\"}";
 	}
 

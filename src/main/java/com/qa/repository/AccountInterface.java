@@ -1,10 +1,12 @@
 package com.qa.repository;
 
-public interface AccountRepository {
+import com.qa.model.Account;
+
+public interface AccountInterface {
 
 	String getAllAccount();
 
-	String createAccount(String account);
+	String createAccount(Account account);
 
 	String updateAccount(Long id, String accountToUpdate);
 

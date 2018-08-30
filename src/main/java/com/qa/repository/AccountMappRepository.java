@@ -11,7 +11,7 @@ import com.qa.model.Account;
 
 @ApplicationScoped
 @Alternative
-public class AccountMappRepository implements AccountRepository {
+public class AccountMappRepository implements AccountInterface {
 	
 	private Map<Long,Account> accountMap;
 	private Long id;
@@ -26,9 +26,8 @@ public class AccountMappRepository implements AccountRepository {
 	}
 
 	@Override
-	public String createAccount(String account) {
-		Account createsAccount = util.getObjectForJSON(account, Account.class);
-		accountMap.put(id, createsAccount);
+	public String createAccount(Account account) {
+		accountMap.put(id, account);
 		return "{\"message\": \"account has been sucessfully added\"}";
 	}
 
